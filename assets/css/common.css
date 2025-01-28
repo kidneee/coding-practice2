@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+/* ============================
+* フォント、背景
+* ========================= */
+:root {
+  /* フォント */
+  --f-ja: "Noto Serif JP", serif;
+  --f-en: "Noto Serif", serif;
+
+  /* フォントサイズ */
+  --fs-logo: 1.625rem; /* 26px */
+  --fs-fv-copyEn: clamp(2.313rem, 4.86vw, 4.375rem); /* 37px 〜 70px */
+  --fs-fv-copyJa: clamp(1.875rem, 2.78vw, 2.5rem); /* 30px 〜 40px */
+  --fs-sec-title: clamp(1.875rem, 4.17vw, 3.75rem); /* 30px 〜 60px */
+  --fs-sec-copy: clamp(1.25rem, 2.08vw, 1.875rem); /* 20px 〜 40px */
+  --fs-text: 1rem; /* 16px */
+  --fs-footer-copyright: 0.875rem; /* 14px */
+
+  /* 文字、背景カラー */
+  --c-black: #282f35;
+  --c-black-dark: #171717;
+  --c-white: #fff;
+}
+
+/* ============================
+* 共通
+* ========================= */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* color: var(--white); */
+  font-family: "Noto Serif JP", "Noto Serif", serif;
+  font-style: normal;
+  font-size: 100%;
+  box-sizing: border-box;
+  position: relative;
+  font-weight: 300;
+}
+
+a {
+  display: block;
+  /* color: var(--white); */
+  cursor: pointer;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+img {
+  height: auto;
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+.pc {
+  display: block;
+}
+
+.sp {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .pc {
+    display: none;
+  }
+
+  .sp {
+    display: block;
+  }
+}
+
+/* セクションタイトル */
+.section__title {
+  display: inline-block;
+  font-size: var(--title-font);
+  letter-spacing: 0.03em;
+  font-weight: 300;
+  line-height: 1.15;
+  border-bottom: 1px solid var(--white);
+  margin-bottom: 45px;
+}
+
+@media screen and (max-width: 900px) {
+  .section__title {
+    font-size: var(--font-32);
+    line-height: 1.125;
+  }
+}
+
+/* コンテンツ幅 */
+.common-inner {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 100px;
+}
+
+/* フェードイン */
+.fade-in {
+  opacity: 0;
+  transform: translate(0, 50%);
+  transition: 2s;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* ============================
+*  Header
+* ========================= */
+.header {
+  height: 96px;
+}
+
+/* ============================
+* Main
+* ========================= */
+/* --- FV --- */
+.fv__bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.fv__bg01 {
+  background-image: url("../img/fv-bgi_01@2x.jpg");
+}

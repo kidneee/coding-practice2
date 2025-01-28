@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cresta Design</title>
+  <!--Favicon-->
+  <link rel="icon" href="./assets/img/favicon.ico">
+  <!--Googleフォント-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <!--CSSファイル-->
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/common.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="common-inner">
+      <!-- ロゴ -->
+      <h1 class="header__logo">
+        <a href="#" class="header__link">Cresta Design</a>
+      </h1>
+      <!-- グローバルナビゲーション -->
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#concept" class="nav__link">Concept</a></li>
+          <li class="nav__item"><a href="#service" class="nav__link">Service</a></li>
+          <li class="nav__item"><a href="#works" class="nav__link">Works</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div><!-- /.common-inner -->
+  </header>
+
+  <main class="main">
+    <!-- FV -->
+    <div class="fv slick">
+      <!-- 背景画像スライダー -->
+      <div class="fv__bg fv__bg01"></div>
+      <div class="fv__bg fv__bg02"></div>
+      <div class="fv__bg fv__bg03"></div>
+
+      <div class="common-inner">
+        <div class="fv__copy">
+          <p class="fv__copy--en">Design for Smile.</p>
+          <p class="fv__copy--ja">〜快適なオフィスをデザインする〜</p>
+        </div><!-- /.fv__copy -->
+      </div><!-- /.common-inner -->
+    </div><!-- /.fv -->
+
+    <!-- Concept -->
+    <section id="concept" class="concept">
+      <div class="common-inner">
+        <h2 class="concept__title concept__heading section__title">Concept</h2>
+        <div class="concept__body">
+          <p class="concept__copy">
+            “働きたくなる空間”をデザインすることで<br>
+            人々を幸せにする。
+          </p>
+          <div class="column">
+            <p class="concept__desc">
+              私たちは、オフィスに特化した空間デザイン専門としております。その理由は、「働きたくなる空間で仕事ができれば多くの人を幸せにできるのではないか」と考えるためです。そんな想いの株式会社Cresta Designだからこそできる空間デザインを提供させていただきます。
+            </p>
+            <img src="./assets/img/concept-image@2x.jpg" width="440" height="240" alt="" class="concept__image">
+          </div><!-- column -->
+        </div><!-- concept__body -->
+      </div><!-- common-inner -->
+    </section>
+
+    <!-- Works -->
+    <section id="works" class="works">
+      <div class="common-inner">
+        <h2 class="works__title works__heading section__title">Works</h2>
+        <ul class="works__body column">
+          <li class="works__item">
+            <img src="./assets/img/card-img01@2x.jpg" width="320" height="200" alt="" class="works__image">
+            <p class="works__desc">新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。</p>
+          </li>
+          <li class="works__item">
+            <img src="./assets/img/card-img02@2x.jpg" width="320" height="200" alt="" class="works__image">
+            <p class="works__desc">新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。</p>
+          </li>
+          <li class="works__item">
+            <img src="./assets/img/card-img03@2x.jpg" width="320" height="200" alt="" class="works__image">
+            <p class="works__desc">新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。</p>
+          </li>
+        </ul><!-- concept__body -->
+        <div class="btn">
+          <a href="#" class="works__link btn__link">View more</a>
+        </div><!-- /.btn -->
+      </div><!-- common-inner -->
+    </section>
+
+    <!-- Service -->
+    <section id="service" class="service">
+      <div class="common-inner">
+        <h2 class="service__title service__heading section__title">Service</h2>
+        <ul class="service__body service__list column">
+          <li class="service__item">
+            <a href="#" class="service__link">Hearing</a>
+          </li>
+          <li class="service__item">
+            <a href="#" class="service__link">Planning</a>
+          </li>
+          <li class="service__item">
+            <a href="#" class="service__link">Direction</a>
+          </li>
+        </ul>
+      </div><!-- common-inner -->
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <div class="common-inner">
+        <h2 class="contact__title contact__heading section__title">Contact</h2>
+        <div class="contact__body">
+          <p class="contact__desc">お気軽にご相談ください。</p>
+          <div class="btn">
+            <a href="#contact" class="contact__link btn__link">Contact</a>
+          </div><!-- /.btn -->
+        </div><!-- contact__body -->
+      </div><!-- common-inner -->
+    </section>
+  </main>
+
+  <footer class=" footer">
+    <div class="footer__inner">
+      <small class="footer__copyright">&copy;cresta.design all rights reserved</small>
+    </div>
+  </footer>
+  <!-- JSファイル -->
+  <script src="./assets/js/main.js"></script>
+  <!-- Slick-->
+  <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</body>
+
+</html>
