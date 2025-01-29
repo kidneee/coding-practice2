@@ -18,10 +18,10 @@
   --fs-footer-copyright: 0.875rem; /* 14px */
   --fs-bg-text: clamp(1.875rem, 6.25vw, 5.625rem); /* 40px 〜 90px */
 
-  /* 文字色 */
-  --c-black: #282f35;
-  --c-black-dark: #171717;
-  --c-white: #fff;
+  /* 固定色 */
+  --black: #282f35;
+  --black-dark: #171717;
+  --white: #fff;
 
   /* 背景色 */
   --bg-btn: #f7d43f;
@@ -35,13 +35,13 @@ html:focus-within {
 }
 
 body {
-  /* color: var(--white); */
   font-family: "Noto Serif JP", "Noto Serif", serif;
   font-style: normal;
   font-size: 100%;
   box-sizing: border-box;
   position: relative;
   font-weight: 300;
+  letter-spacing: 0.05em;
 }
 
 a {
@@ -89,17 +89,15 @@ img {
 
 /* コンテンツ幅 */
 .l-wrapper {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding: 100px 120px;
+  position: relative;
 }
 
 .l-inner {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding-left: 120px;
-  padding-right: 120px;
-  position: relative;
+  padding: 0 100px;
 }
 
 /* セクションタイトル */
@@ -120,7 +118,7 @@ img {
   content: "";
   width: 200px;
   height: 5px;
-  background-color: var(--c-black);
+  background-color: var(--black);
 }
 
 @media screen and (max-width: 900px) {
@@ -145,9 +143,9 @@ img {
 * ========================= */
 .header {
   position: fixed;
-  height: 96px;
   z-index: 10;
   width: 100%;
+  padding: 20px 120px;
 }
 
 .header__inner {
@@ -155,16 +153,24 @@ img {
   justify-content: space-between;
   align-items: center;
   height: 100%;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.header__logo-link {
+  font-size: var(--fs-logo);
+  line-height: 1.384;
 }
 
 .header__nav-list {
   display: flex;
   align-items: center;
+  gap: 30px;
 }
 
 .header__logo-link,
 .header__nav-link {
-  color: var(--c-white);
+  color: var(--white);
 }
 /* ============================
 * Main
@@ -174,6 +180,8 @@ img {
 -------------------------*/
 .fv {
   position: relative;
+  height: 100vh;
+  width: 100%;
 }
 
 /* FV 背景画像 */
@@ -191,30 +199,44 @@ img {
 /* FV コンテンツ */
 .fv__content {
   position: absolute;
-  top: 50%;
-  left: 8.333%;
-  transform: translateY(-50%);
-  color: var(--c-white);
+  bottom: 170px;
+  left: 120px;
+  /* transform: translateY(-50%); */
+  color: var(--white);
 }
 .fv__copy {
-  color: var(--c-white);
+  color: var(--white);
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fv__copy--en {
+  font-size: var(--fs-fv-copyEn);
+  line-height: 1.357;
+}
+
+.fv__copy--ja {
+  font-size: var(--fs-fv-copyJa);
+  line-height: 1.425;
 }
 
 /*-------------------------
   Concept
 -------------------------*/
-.concept .common-inner::before {
+.concept__wrapper::before {
   content: "Our Concept"; /* 表示する文字 */
   position: absolute;
-  bottom: 70px; /* 適宜調整 */
-  right: 5%; /* 適宜調整 */
+  bottom: 0; /* 適宜調整 */
+  right: 8%; /* 適宜調整 */
   font-size: var(--fs-bg-text); /* 大きなサイズ */
   color: rgba(0, 0, 0, 0.05); /* 薄い色で背景に馴染む */
   z-index: -1; /* 背景に配置 */
   pointer-events: none; /* クリックなどを無効化 */
 }
 
-.concept__heading {
+.concept__title {
   margin-bottom: 70px;
 }
 
@@ -224,6 +246,10 @@ img {
   font-weight: bold;
   line-height: 1.667;
   margin-bottom: 60px;
+}
+
+.concept .l-column {
+  gap: 12%;
 }
 
 /*-------------------------
@@ -245,14 +271,28 @@ img {
 }
 
 .works__title {
-  color: var(--c-white);
+  color: var(--white);
   display: flex;
   justify-content: flex-end;
   margin-bottom: 80px;
 }
 
 .works__title::after {
-  background-color: var(--c-white);
+  background-color: var(--white);
+}
+
+.works__list {
+  margin-bottom: 80px;
+}
+
+.works .card {
+  max-width: 320px;
+  width: 100%;
+}
+
+.works .card__desc-wrapper {
+  background-color: var(--white);
+  padding: 25px 20px;
 }
 
 /*-------------------------
@@ -263,22 +303,52 @@ img {
 }
 .service__item {
   position: relative;
-  background-size: cover;
-  background-position: center;
   width: calc(100% / 3);
   height: 320px;
 }
 
-.service__item--hearing {
+.service__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: filter 0.3s;
+  z-index: 1;
+}
+
+.service__link {
+  color: var(--white);
+  font-size: var(--fs-sec-copy);
+  font-weight: bold;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  z-index: 5;
+}
+
+.service__item--hearing::before {
   background-image: url(../img/service-img01@2x.jpg);
 }
 
-.service__item--planning {
+.service__item--planning::before {
   background-image: url(../img/service-img02@2x.jpg);
 }
 
-.service__item--direction {
+.service__item--direction::before {
   background-image: url(../img/sevice-img03@2x.jpg);
+}
+
+.service__item:hover::before {
+  filter: brightness(70%);
 }
 
 /*-------------------------
@@ -288,14 +358,26 @@ img {
   background-image: url(../img/works-bgi@2x.jpg);
 }
 .contact__title {
-  color: var(--c-white);
+  color: var(--white);
   display: flex;
   justify-content: flex-end;
   margin-bottom: 80px;
 }
 
 .contact__title::after {
-  background-color: var(--c-white);
+  background-color: var(--white);
+}
+
+.contact__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.contact__desc {
+  color: var(--white);
 }
 /* ============================
 * Footer
