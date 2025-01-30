@@ -470,3 +470,75 @@ img {
   line-height: 1.357;
   text-align: center;
 }
+
+/* ============================
+* Contactページ
+* ========================= */
+.contact-page__header {
+  background-image: url(../img/contact-page-bgi@2x.jpg);
+  width: 100%;
+  height: 453px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-page__title {
+  font-family: "Noto Serif", serif;
+  color: var(--white);
+  font-size: var(--fs-sec-title);
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 0.1em;
+}
+
+.contact-page__content.l-wrapper {
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+.contact-page .l-inner {
+  max-width: 900px;
+}
+
+.contact-page .form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-family: "Noto Serif Regular", serif;
+}
+
+.form__label {
+  display: block;
+  font-size: var(--fs-16);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+.form__group:first-of-type > .form__label {
+  padding-bottom: 2px;
+}
+
+.form__input {
+  display: block;
+  border: 1px solid #141414;
+  width: 100%;
+  height: 30px;
+  padding-left: 0px;
+  padding-right: 0px;
+  border-bottom-width: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  box-sizing: border-box;
+}
+
+.form__input.form__textarea {
+  height: 171px;
+}
+
+.inquiry__content.l-column {
+  justify-content: flex-start;
+  gap: 20px;
+  font-size: var(--fs-16);
+  line-height: 1.375;
+}

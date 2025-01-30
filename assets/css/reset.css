@@ -121,7 +121,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 
@@ -160,7 +160,7 @@ picture {
   display: block;
 }
 
-input,
+input[type="text"],
 textarea {
   width: 100%;
   box-sizing: content-box;
@@ -168,10 +168,8 @@ textarea {
   -webkit-box-sizing: border-box;
   -o-box-sizing: border-box;
   -ms-box-sizing: border-box;
-  border: none;
   padding: 0;
   background-color: transparent;
-  border-style: none;
 }
 
 select,
@@ -188,7 +186,7 @@ ol {
   list-style: none;
 }
 
-input[type='checkbox' i] {
+input[type="checkbox" i] {
   margin: 0;
   border: initial;
   background: initial;
