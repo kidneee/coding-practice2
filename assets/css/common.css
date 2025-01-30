@@ -15,6 +15,7 @@
   --fs-sec-title: clamp(1.875rem, 4.17vw, 3.75rem); /* 30px 〜 60px */
   --fs-sec-copy: clamp(1.25rem, 2.08vw, 1.875rem); /* 20px 〜 40px */
   --fs-text: 1rem; /* 16px */
+  --fs-btn: 1rem; /* 16px */
   --fs-footer-copyright: 0.875rem; /* 14px */
   --fs-bg-text: clamp(1.875rem, 6.25vw, 5.625rem); /* 40px 〜 90px */
 
@@ -89,15 +90,31 @@ img {
 
 /* コンテンツ幅 */
 .l-wrapper {
-  padding: 100px 120px;
-  position: relative;
+  width: 100%;
+  padding-left: 120px;
+  padding-right: 120px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .l-inner {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 100px;
+  padding: 0 100px 70px;
+  position: relative;
+}
+
+/* 背景文字 */
+.l-inner::before {
+  display: block;
+  position: absolute;
+  font-size: var(--fs-bg-text);
+  font-family: "Noto Serif", serif;
+  font-weight: bold;
+  line-height: 1.356;
+  color: red;
+  pointer-events: none;
 }
 
 /* セクションタイトル */
@@ -107,7 +124,6 @@ img {
   font-style: italic;
   font-weight: bold;
   line-height: 1.367;
-  text-transform: uppercase;
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -127,6 +143,7 @@ img {
   }
 }
 
+/* ボタン */
 .button {
   display: flex;
   align-items: center;
@@ -136,6 +153,11 @@ img {
   height: 59px;
   border-radius: 1000px;
   margin: 0 auto;
+}
+.button__link {
+  color: var(--black-dark);
+  font-size: var(--fs-btn);
+  font-weight: bold;
 }
 
 /* ============================
@@ -225,19 +247,21 @@ img {
 /*-------------------------
   Concept
 -------------------------*/
-.concept__wrapper::before {
-  content: "Our Concept"; /* 表示する文字 */
-  position: absolute;
-  bottom: 0; /* 適宜調整 */
-  right: 8%; /* 適宜調整 */
-  font-size: var(--fs-bg-text); /* 大きなサイズ */
-  color: rgba(0, 0, 0, 0.05); /* 薄い色で背景に馴染む */
-  z-index: -1; /* 背景に配置 */
-  pointer-events: none; /* クリックなどを無効化 */
+.concept__wrapper {
+  padding-top: 100px;
+  padding-bottom: 192px;
+}
+
+.concept .l-inner::before {
+  content: "Our Concept";
+  right: 0;
+  bottom: -120px;
+  z-index: -1;
 }
 
 .concept__title {
   margin-bottom: 70px;
+  text-transform: uppercase;
 }
 
 .concept__copy {
@@ -245,29 +269,34 @@ img {
   font-size: var(--fs-sec-copy);
   font-weight: bold;
   line-height: 1.667;
-  margin-bottom: 60px;
+  margin-bottom: 56px;
 }
 
 .concept .l-column {
   gap: 12%;
 }
 
+.concept__desc {
+  font-size: var(--fs-text);
+  line-height: 1.875;
+}
+
 /*-------------------------
   Works
 -------------------------*/
-.works__bg {
+.works__wrapper {
   background-image: url(../img/works-bgi@2x.jpg);
+  position: relative;
+  z-index: -2;
+  padding-top: 104px;
+  padding-bottom: 179px;
 }
 
 .works .l-inner::before {
-  content: "Our Works"; /* 表示する文字 */
-  position: absolute;
-  bottom: 70px; /* 適宜調整 */
-  right: 5%; /* 適宜調整 */
-  font-size: var(--fs-bg-text); /* 大きなサイズ */
-  color: rgba(0, 0, 0, 0.05); /* 薄い色で背景に馴染む */
-  z-index: 2; /* 背景に配置 */
-  pointer-events: none; /* クリックなどを無効化 */
+  content: "Our Works";
+  left: 0;
+  bottom: -120px;
+  z-index: -1;
 }
 
 .works__title {
@@ -288,16 +317,49 @@ img {
 .works .card {
   max-width: 320px;
   width: 100%;
+  box-shadow: 0 0 6px #000;
 }
 
 .works .card__desc-wrapper {
   background-color: var(--white);
-  padding: 25px 20px;
+  padding: 21px 20px;
+}
+
+.works__desc.card__desc {
+  font-size: var(--fs-text);
+  line-height: 1.875;
 }
 
 /*-------------------------
   Service
 -------------------------*/
+.service__wrapper {
+  padding-top: 100px;
+  padding-bottom: 248px;
+  position: relative;
+}
+
+.service__wrapper::before {
+  position: absolute;
+  content: "Our Services";
+  right: 120px;
+  bottom: 70px;
+  z-index: -1;
+  display: block;
+  position: absolute;
+  font-size: var(--fs-bg-text);
+  font-weight: bold;
+  line-height: 1.356;
+  color: red;
+  pointer-events: none;
+  height: 100px;
+}
+
+.service__title {
+  padding-left: 220px;
+  margin-bottom: 80px;
+}
+
 .service__list {
   width: 100%;
 }
@@ -323,6 +385,7 @@ img {
 .service__link {
   color: var(--white);
   font-size: var(--fs-sec-copy);
+  font-family: "Noto Serif", serif;
   font-weight: bold;
   font-style: italic;
   display: flex;
@@ -354,9 +417,12 @@ img {
 /*-------------------------
   Contact
 -------------------------*/
-.contact__bg {
-  background-image: url(../img/works-bgi@2x.jpg);
+.contact__wrapper {
+  background-image: url(../img/contact-bgi@2x.jpg);
+  padding-top: 109px;
+  padding-bottom: 262px;
 }
+
 .contact__title {
   color: var(--white);
   display: flex;
@@ -378,6 +444,13 @@ img {
 
 .contact__desc {
   color: var(--white);
+}
+
+.contact .l-inner::before {
+  content: "Contact us";
+  left: 0;
+  bottom: -70px;
+  z-index: 2;
 }
 /* ============================
 * Footer
