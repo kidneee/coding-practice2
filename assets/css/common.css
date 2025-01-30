@@ -14,7 +14,8 @@
   --fs-fv-copyJa: clamp(1.875rem, 2.78vw, 2.5rem); /* 30px 〜 40px */
   --fs-sec-title: clamp(1.875rem, 4.17vw, 3.75rem); /* 30px 〜 60px */
   --fs-sec-copy: clamp(1.25rem, 2.08vw, 1.875rem); /* 20px 〜 40px */
-  --fs-text: 1rem; /* 16px */
+  --fs-16: 1rem; /* 16px */
+  --fs-20: 1.25rem; /* 16px */
   --fs-btn: 1rem; /* 16px */
   --fs-footer-copyright: 0.875rem; /* 14px */
   --fs-bg-text: clamp(1.875rem, 6.25vw, 5.625rem); /* 40px 〜 90px */
@@ -95,6 +96,7 @@ img {
   padding-right: 120px;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 .l-inner {
@@ -277,7 +279,7 @@ img {
 }
 
 .concept__desc {
-  font-size: var(--fs-text);
+  font-size: var(--fs-16);
   line-height: 1.875;
 }
 
@@ -326,7 +328,7 @@ img {
 }
 
 .works__desc.card__desc {
-  font-size: var(--fs-text);
+  font-size: var(--fs-16);
   line-height: 1.875;
 }
 
@@ -420,14 +422,14 @@ img {
 .contact__wrapper {
   background-image: url(../img/contact-bgi@2x.jpg);
   padding-top: 109px;
-  padding-bottom: 262px;
+  padding-bottom: 190px;
 }
 
 .contact__title {
   color: var(--white);
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 80px;
+  margin-bottom: 84px;
 }
 
 .contact__title::after {
@@ -439,17 +441,19 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 50px;
 }
 
 .contact__desc {
+  font-size: var(--fs-20);
+  font-weight: bold;
   color: var(--white);
 }
 
 .contact .l-inner::before {
   content: "Contact us";
   left: 0;
-  bottom: -70px;
+  bottom: -130px;
   z-index: 2;
 }
 /* ============================
@@ -462,5 +466,7 @@ img {
 
 .footer__copyright {
   display: block;
+  font-size: var(--fs-footer-copyright);
+  line-height: 1.357;
   text-align: center;
 }
