@@ -509,6 +509,10 @@ img {
   font-family: "Noto Serif Regular", serif;
 }
 
+.form__group:last-of-type {
+  margin-bottom: 55px;
+}
+
 .form__label {
   display: block;
   font-size: var(--fs-16);
@@ -526,7 +530,6 @@ img {
   height: 30px;
   padding-left: 0px;
   padding-right: 0px;
-  border-bottom-width: 0px;
   padding-top: 0px;
   padding-bottom: 0px;
   box-sizing: border-box;
