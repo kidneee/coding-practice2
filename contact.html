@@ -19,19 +19,32 @@
   <header class="header">
     <div class="header__inner">
       <!-- ロゴ -->
-      <p class="header__logo">
-          <a href="./" class="header__logo-link">Cresta Design</a>
-      </p>
+      <h1 class="header__logo">
+          <a href="#" class="header__logo-link">Cresta Design</a>
+        </h1>
+
       <!-- グローバルナビゲーション -->
-      <nav class="header__nav">
+      <nav id="drawerMenu" class="header__nav">
         <ul class="header__nav-list">
           <li class="header__nav-item"><a href="index.html#concept" class="header__nav-link">Concept</a></li>
-          <li class="header__nav-item"><a href="index.html#service" class="header__nav-link">Service</a></li>
-          <li class="header__nav-item"><a href="index.html#works" class="header__nav-link">Works</a></li>
+          <li class="header__nav-item"><a href="#service" class="header__nav-link">Service</a></li>
+          <li class="header__nav-item"><a href="#works" class="header__nav-link">Works</a></li>
           <li class="header__nav-item"><a href="./contact.html" class="header__nav-link">Contact</a></li>
         </ul>
       </nav>
-    </div><!-- /.l-inner -->
+
+      <!-- ハンバーガーメニュー -->
+      <div class="hamburger__wrapper">
+        <button type="button" id="js-buttonHamburger" class="hamburger" aria-controls="drawerMenu" aria-expanded="false">
+          <span class="hamburger__line">
+            <span class="hidden-text">
+              メニューを開閉する
+            </span>
+          </span>
+        </button>
+      </div>
+
+    </div><!-- /.header__inner -->
   </header>
 
   <main class="main">
@@ -46,15 +59,15 @@
             <div class="form__group">
               <span class="form__label">お問い合わせ内容</span>
               <div class="inquiry__content l-column ">
-                <label class="l-column">
+                <label class="l-column l-column--checkbox">
                   <input type="checkbox" name="inquiry" value="資料請求">
                   <span class="inquiry__label">資料請求</span>
                 </label>
-                <label class="l-column">
+                <label class="l-column l-column--checkbox">
                   <input type="checkbox" name="inquiry" value="電話相談">
                   <span class="inquiry__label">お電話でのご相談を希望</span>
                 </label>
-                <label class="l-column">
+                <label class="l-column l-column--checkbox">
                   <input type="checkbox" name="inquiry" value="申し込み">
                   <span class="inquiry__label">申し込み</span>
                 </label>

@@ -18,7 +18,7 @@
   --fs-20: 1.25rem; /* 16px */
   --fs-btn: 1rem; /* 16px */
   --fs-footer-copyright: 0.875rem; /* 14px */
-  --fs-bg-text: clamp(1.875rem, 6.25vw, 5.625rem); /* 40px 〜 90px */
+  --fs-bg-text: clamp(2.5rem, 6.25vw, 5.625rem); /* 40px 〜 90px */
 
   /* 固定色 */
   --black: #282f35;
@@ -89,7 +89,7 @@ img {
   justify-content: space-between;
 }
 @media screen and (max-width: 768px) {
-  .l-column {
+  .l-column:not(.l-column--checkbox) {
     flex-direction: column;
   }
 }
@@ -170,6 +170,7 @@ img {
   height: 59px;
   border-radius: 1000px;
   margin: 0 auto;
+  box-shadow: 0 0 6px #1b1310;
 }
 
 .button__link {
@@ -196,9 +197,11 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   height: 100%;
   font-weight: bold;
   font-style: italic;
+  position: relative;
 }
 
 .header__logo-link {
@@ -216,6 +219,158 @@ img {
 .header__nav-link {
   color: var(--white);
 }
+
+/*-------------------------
+  ハンバーガーメニュー
+-------------------------*/
+.hamburger {
+  display: none;
+}
+
+.hidden-text {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+}
+
+/* メニューのスタイル */
+@media screen and (max-width: 768px) {
+  .header__nav {
+    display: block;
+    position: fixed;
+    z-index: 5;
+    background-color: var(--black);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: -100%;
+    opacity: 0.5;
+    transition: 0.5s ease;
+  }
+
+  .header__nav-list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .header__nav.open {
+    display: block;
+    position: fixed;
+    z-index: 5;
+    background-color: var(--black);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    opacity: 1;
+  }
+
+  .header.open .header__nav-list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* ハンバーガーメニューのスタイル */
+  .hamburger__wrapper {
+    height: 20px;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    z-index: 100;
+  }
+
+  .header.open .hamburger {
+    top: 37px;
+  }
+
+  .hamburger:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+  .hamburger__line {
+    margin: auto;
+    width: 100%;
+    height: 2px;
+    background-color: var(--white);
+    transition: transform 0.3s, opacity 0.3s;
+    position: absolute;
+    z-index: 100;
+  }
+
+  .hamburger__line::before,
+  .hamburger__line::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    -webkit-transition: inherit;
+    transition: inherit;
+  }
+
+  .hamburger__line::before {
+    top: -10px;
+  }
+
+  .hamburger__line::after {
+    top: 10px;
+  }
+
+  /* メニューオープン時のクラス */
+  .hamburger[aria-expanded="true"] .hamburger__line {
+    background-color: transparent;
+  }
+
+  .hamburger[aria-expanded="true"] .hamburger__line::before,
+  .hamburger[aria-expanded="true"] .hamburger__line::after {
+    top: 0;
+    background-color: var(--white);
+    z-index: 100;
+  }
+
+  .hamburger[aria-expanded="true"] .hamburger__line::before {
+    -webkit-transform: rotate(-315deg);
+    -ms-transform: rotate(-315deg);
+    transform: rotate(-315deg);
+  }
+
+  .hamburger[aria-expanded="true"] .hamburger__line::after {
+    -webkit-transform: rotate(315deg);
+    -ms-transform: rotate(315deg);
+    transform: rotate(315deg);
+  }
+}
+
 /* ============================
 * Main
 * ========================= */
@@ -512,6 +667,8 @@ img {
 * ========================= */
 .contact-page__header {
   background-image: url(../img/contact-page-bgi@2x.jpg);
+  background-size: cover;
+  background-position: center;
   width: 100%;
   height: 453px;
   display: flex;
@@ -519,6 +676,11 @@ img {
   justify-content: center;
   align-items: center;
   position: relative;
+}
+@media screen and (max-width: 768px) {
+  .contact-page__header {
+    height: 360px;
+  }
 }
 
 .contact-page__header::before {
@@ -534,8 +696,14 @@ img {
   line-height: 1.356;
   color: var(--white);
   pointer-events: none;
-  height: 100px;
   opacity: 0.1;
+}
+@media screen and (max-width: 768px) {
+  .contact-page__header::before {
+    line-height: 1.6;
+    left: 15px;
+    bottom: 40px;
+  }
 }
 
 .contact-page__title {
@@ -551,6 +719,12 @@ img {
   padding-top: 100px;
   padding-bottom: 10px;
 }
+@media screen and (max-width: 768px) {
+  .contact-page__content.l-wrapper {
+    padding-bottom: 80px;
+  }
+}
+
 .contact-page .l-inner {
   max-width: 900px;
 }
@@ -574,7 +748,25 @@ img {
   margin-bottom: 5px;
 }
 .form__group:first-of-type > .form__label {
-  padding-bottom: 2px;
+  padding-bottom: 10px;
+}
+
+.inquiry__label {
+  margin-left: 10px;
+}
+
+.inquiry__content.l-column {
+  justify-content: flex-start;
+  gap: 20px;
+  font-size: var(--fs-16);
+  line-height: 1.375;
+}
+
+@media screen and (max-width: 768px) {
+  .inquiry__content.l-column {
+    align-items: flex-start;
+    gap: 5px;
+  }
 }
 
 .form__input {
@@ -593,13 +785,8 @@ img {
   height: 171px;
 }
 
-.inquiry__content.l-column {
-  justify-content: flex-start;
-  gap: 20px;
-  font-size: var(--fs-16);
-  line-height: 1.375;
-}
-
-.inquiry__label {
-  margin-left: 10px;
+@media screen and (max-width: 768px) {
+  .form__submit.button {
+    width: 245px;
+  }
 }
