@@ -115,7 +115,7 @@ img {
   font-family: "Noto Serif", serif;
   font-weight: bold;
   line-height: 1.356;
-  color: red;
+  opacity: 0.1;
   pointer-events: none;
 }
 
@@ -299,6 +299,8 @@ img {
   left: 0;
   bottom: -120px;
   z-index: -1;
+  color: var(--white);
+  opacity: 0.1;
 }
 
 .works__title {
@@ -352,7 +354,8 @@ img {
   font-size: var(--fs-bg-text);
   font-weight: bold;
   line-height: 1.356;
-  color: red;
+  color: var(--black-dark);
+  opacity: 0.05;
   pointer-events: none;
   height: 100px;
 }
@@ -455,6 +458,8 @@ img {
   left: 0;
   bottom: -130px;
   z-index: 2;
+  color: var(--white);
+  opacity: 0.1;
 }
 /* ============================
 * Footer
@@ -469,6 +474,7 @@ img {
   font-size: var(--fs-footer-copyright);
   line-height: 1.357;
   text-align: center;
+  letter-spacing: 0.02em;
 }
 
 /* ============================
@@ -482,6 +488,24 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.contact-page__header::before {
+  position: absolute;
+  content: "Contact us";
+  left: 3.33vw;
+  bottom: 70px;
+  z-index: 2;
+  display: block;
+  position: absolute;
+  font-size: var(--fs-bg-text);
+  font-weight: bold;
+  line-height: 1.356;
+  color: var(--white);
+  pointer-events: none;
+  height: 100px;
+  opacity: 0.1;
 }
 
 .contact-page__title {
@@ -495,7 +519,7 @@ img {
 
 .contact-page__content.l-wrapper {
   padding-top: 100px;
-  padding-bottom: 80px;
+  padding-bottom: 10px;
 }
 .contact-page .l-inner {
   max-width: 900px;
@@ -544,4 +568,8 @@ img {
   gap: 20px;
   font-size: var(--fs-16);
   line-height: 1.375;
+}
+
+.inquiry__label {
+  margin-left: 10px;
 }
