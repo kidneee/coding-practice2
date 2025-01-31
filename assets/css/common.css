@@ -97,8 +97,8 @@ img {
 /* コンテンツ幅 */
 .l-wrapper {
   width: 100%;
-  padding-left: 120px;
-  padding-right: 120px;
+  padding-left: 8.33%;
+  padding-right: 8.33%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -114,7 +114,7 @@ img {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 100px 70px;
+  padding: 0 6.94% 70px;
   position: relative;
 }
 @media screen and (max-width: 768px) {
@@ -223,7 +223,7 @@ img {
 /*-------------------------
   ハンバーガーメニュー
 -------------------------*/
-.hamburger {
+.hamburger__wrapper {
   display: none;
 }
 
@@ -288,6 +288,7 @@ img {
 
   /* ハンバーガーメニューのスタイル */
   .hamburger__wrapper {
+    display: block;
     height: 20px;
   }
 
