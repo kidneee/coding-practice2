@@ -84,14 +84,12 @@ document.addEventListener('DOMContentLoaded', function () {
     ヘッダーの背景表示
     ===================================================*/
     // スクロール位置がFV(100vh)を超えた場合
-    if (scroll > fvHeight) {
-      // ロゴとハンバーガ―メニュをfadeInで表示する
-      console.log('こえたよ');
+    if (scroll > (fvHeight - 100)) {
+      // .headerに背景色をつける
       document.querySelector('header').style.backgroundColor = '#282F35';
-      // スクロール位置が520px未満の場合
+      // 背景色を戻す
     } else {
       document.querySelector('.header').style.backgroundColor = '';
-      console.log('こえてないよ');
     }
   });
 

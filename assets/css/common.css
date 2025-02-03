@@ -4,16 +4,12 @@
 * フォント、背景
 * ========================= */
 :root {
-  /* フォント */
-  --f-ja: "Noto Serif JP", serif;
-  --f-en: "Noto Serif", serif;
-
   /* フォントサイズ */
   --fs-logo: 1.625rem; /* 26px */
   --fs-fv-copyEn: clamp(2.313rem, 4.86vw, 4.375rem); /* 37px 〜 70px */
   --fs-fv-copyJa: clamp(1.875rem, 2.78vw, 2.5rem); /* 30px 〜 40px */
   --fs-sec-title: clamp(1.875rem, 4.17vw, 3.75rem); /* 30px 〜 60px */
-  --fs-sec-copy: clamp(1.25rem, 2.08vw, 1.875rem); /* 20px 〜 40px */
+  --fs-sec-copy: clamp(1.25rem, 2.08vw, 2.5rem); /* 20px 〜 40px */
   --fs-16: 1rem; /* 16px */
   --fs-20: 1.25rem; /* 16px */
   --fs-btn: 1rem; /* 16px */
@@ -43,7 +39,7 @@ body {
   box-sizing: border-box;
   position: relative;
   font-weight: 300;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.048em;
 }
 
 a {
@@ -82,6 +78,12 @@ img {
   }
 }
 
+/* 英語フォント指定 */
+[lang="en"] {
+  font-family: "Noto Serif", serif;
+  letter-spacing: 0.05em;
+}
+
 /* 横並び */
 .l-column {
   display: flex;
@@ -114,7 +116,7 @@ img {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 6.94% 70px;
+  padding: 0 100px 70px;
   position: relative;
 }
 @media screen and (max-width: 768px) {
@@ -133,12 +135,12 @@ img {
   line-height: 1.356;
   opacity: 0.1;
   pointer-events: none;
+  letter-spacing: 0.05em;
 }
 
 /* セクションタイトル */
 .section-title {
   font-size: var(--fs-sec-title);
-  font-family: var(--f-en);
   font-style: italic;
   font-weight: bold;
   line-height: 1.367;
@@ -178,7 +180,6 @@ img {
   font-size: var(--fs-btn);
   font-weight: bold;
 }
-
 /* ============================
 *  Header
 * ========================= */
@@ -187,6 +188,7 @@ img {
   z-index: 10;
   width: 100%;
   padding: 20px 120px;
+  transition: 1s ease;
 }
 @media screen and (max-width: 768px) {
   .header {
@@ -404,14 +406,26 @@ img {
   background-image: url(../img/fv-bgi_03@2x.jpg);
 }
 
+/* スライダーの基本設定 */
+.slick {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.slick .slick-list,
+.slick .slick-track {
+  height: 100%;
+}
+
 /* FV コンテンツ */
 .fv__content {
   position: absolute;
-  bottom: 170px;
+  bottom: 172px;
   left: 120px;
-  /* transform: translateY(-50%); */
   color: var(--white);
 }
+
 .fv__copy {
   color: var(--white);
   font-weight: bold;
@@ -428,6 +442,7 @@ img {
 .fv__copy--ja {
   font-size: var(--fs-fv-copyJa);
   line-height: 1.425;
+  letter-spacing: 0.04em;
 }
 
 /*-------------------------
@@ -456,6 +471,7 @@ img {
   font-weight: bold;
   line-height: 1.667;
   margin-bottom: 56px;
+  letter-spacing: 0.051em;
 }
 
 .concept .l-column {
@@ -465,6 +481,8 @@ img {
 .concept__desc {
   font-size: var(--fs-16);
   line-height: 1.875;
+  letter-spacing: 0.04em;
+  text-align: justify;
 }
 
 /*-------------------------
@@ -492,6 +510,8 @@ img {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 80px;
+  gap: 43px;
+  letter-spacing: 0.1em;
 }
 
 .works__title::after {
@@ -547,6 +567,7 @@ img {
 .service__title {
   padding-left: 220px;
   margin-bottom: 80px;
+  letter-spacing: 0.1em;
 }
 @media screen and (max-width: 767px) {
   .service__title {
@@ -583,7 +604,7 @@ img {
 
 .service__link {
   color: var(--white);
-  font-size: var(--fs-sec-copy);
+  font-size: 2.5rem;
   font-family: "Noto Serif", serif;
   font-weight: bold;
   font-style: italic;
@@ -627,6 +648,8 @@ img {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 84px;
+  letter-spacing: 0.1em;
+  gap: 25px;
 }
 
 .contact__title::after {
@@ -668,7 +691,7 @@ img {
   font-size: var(--fs-footer-copyright);
   line-height: 1.357;
   text-align: center;
-  letter-spacing: 0.02em;
+  font-weight: bold;
 }
 
 /* ============================
