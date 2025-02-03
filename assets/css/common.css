@@ -393,7 +393,15 @@ img {
 }
 
 .fv__bg01 {
-  background-image: url("../img/fv-bgi_01@2x.jpg");
+  background-image: url(../img/fv-bgi_01@2x.jpg);
+}
+
+.fv__bg02 {
+  background-image: url(../img/fv-bgi_02@2x.jpg);
+}
+
+.fv__bg03 {
+  background-image: url(../img/fv-bgi_03@2x.jpg);
 }
 
 /* FV コンテンツ */
