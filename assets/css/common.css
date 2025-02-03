@@ -425,6 +425,14 @@ img {
   left: 120px;
   color: var(--white);
 }
+@media screen and (max-width: 768px) {
+  .fv__content {
+    bottom: 0;
+    left: 15px;
+    transform: translateY(-50%);
+    top: 56%;
+  }
+}
 
 .fv__copy {
   color: var(--white);
@@ -433,10 +441,20 @@ img {
   flex-direction: column;
   gap: 20px;
 }
+@media screen and (max-width: 768px) {
+  .fv__copy {
+    gap: 46px;
+  }
+}
 
 .fv__copy--en {
   font-size: var(--fs-fv-copyEn);
   line-height: 1.357;
+}
+@media screen and (max-width: 768px) {
+  .fv__copy--en {
+    line-height: 1.378;
+  }
 }
 
 .fv__copy--ja {
@@ -444,7 +462,21 @@ img {
   line-height: 1.425;
   letter-spacing: 0.04em;
 }
+@media screen and (max-width: 768px) {
+  .fv__copy--ja {
+    text-align: center;
+    line-height: 1.667;
+  }
+}
 
+.fv__copy--ja .pc {
+  display: inline-block;
+}
+@media screen and (max-width: 768px) {
+  .fv__copy--ja .pc {
+    display: none;
+  }
+}
 /*-------------------------
   Concept
 -------------------------*/
@@ -464,6 +496,11 @@ img {
   margin-bottom: 70px;
   text-transform: uppercase;
 }
+@media screen and (max-width: 768px) {
+  .concept__title {
+    margin-bottom: 50px;
+  }
+}
 
 .concept__copy {
   text-align: center;
@@ -472,6 +509,12 @@ img {
   line-height: 1.667;
   margin-bottom: 56px;
   letter-spacing: 0.051em;
+}
+@media screen and (max-width: 768px) {
+  .concept__copy {
+    margin-bottom: 26px;
+    line-height: 1.5;
+  }
 }
 
 .concept .l-column {
@@ -483,6 +526,19 @@ img {
   line-height: 1.875;
   letter-spacing: 0.04em;
   text-align: justify;
+}
+@media screen and (max-width: 768px) {
+  .concept__desc {
+    text-align: justify;
+    letter-spacing: 0.035em;
+  }
+}
+
+.concept__image--wrapper,
+.concept__desc {
+  max-width: 440px;
+  width: 100%;
+  height: 100%;
 }
 
 /*-------------------------
@@ -719,7 +775,7 @@ img {
   position: absolute;
   content: "Contact us";
   left: 3.33vw;
-  bottom: 70px;
+  bottom: 45px;
   z-index: 2;
   display: block;
   position: absolute;
@@ -729,6 +785,7 @@ img {
   color: var(--white);
   pointer-events: none;
   opacity: 0.1;
+  letter-spacing: 0.05em;
 }
 @media screen and (max-width: 768px) {
   .contact-page__header::before {
@@ -780,7 +837,7 @@ img {
   margin-bottom: 5px;
 }
 .form__group:first-of-type > .form__label {
-  padding-bottom: 10px;
+  padding-bottom: 2px;
 }
 
 .inquiry__label {
@@ -801,6 +858,10 @@ img {
   }
 }
 
+.inquiry__checkbox {
+  transform: scale(0.8);
+}
+
 .form__input {
   display: block;
   border: 1px solid #141414;
@@ -817,6 +878,9 @@ img {
   height: 171px;
 }
 
+.form__submit.button {
+  font-weight: bold;
+}
 @media screen and (max-width: 768px) {
   .form__submit.button {
     width: 245px;
