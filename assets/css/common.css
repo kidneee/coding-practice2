@@ -315,10 +315,6 @@ img {
     z-index: 100;
   }
 
-  .header.open .hamburger {
-    top: 37px;
-  }
-
   .hamburger:hover {
     opacity: 0.7;
     cursor: pointer;
